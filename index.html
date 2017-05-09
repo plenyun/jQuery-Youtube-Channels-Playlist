@@ -5,14 +5,26 @@
 		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
 		
-		<title>jQuery Youtube Channels Playlist - iBacor.com</title>
+		<title>jQuery Youtube Channels Playlist - Bachors.com</title>
 
 		<!-- Custom style  Youtube Channels Playlist -->
 		<link type="text/css" rel="stylesheet" href="css/ycp.css" />
 		
 		<style>
 		body {
-			margin: 20px 10% 20px 10%
+			color: #fff; 
+			background: #FF3B68;
+			background: -moz-linear-gradient(122deg, #FF3B68 30%, #A41CFF 81%);
+			background: -webkit-linear-gradient(122deg, #FF3B68 30%, #A41CFF 81%);
+			background: -o-linear-gradient(122deg, #FF3B68 30%, #A41CFF 81%);
+			background: -ms-linear-gradient(122deg, #FF3B68 30%, #A41CFF 81%);
+			background: linear-gradient(122deg, #FF3B68 30%, #A41CFF 81%);
+			margin: 20px 10% 20px 10%;
+			font-family: "Roboto", "Helvetica", "Arial", sans-serif
+		}
+		
+		a {
+			color: #333
 		}
 		
 		pre {
@@ -46,19 +58,22 @@
 		
 		<h1 align="center">Demo <a href="https://github.com/bachors/jQuery-Youtube-Channels-Playlist" target="_BLANK">YCP.JS</a></h1>
 		
-		<h3>HTML:</h3>
-		<p><b>data-ycp_title</b> : Title your playlist (option)<br>
-		<b>data-ycp_channel</b> : ChannelId, PlayListId or UserName (required)</p>
-		<h3>Javascript:</h3>
-		<p><b>apikey</b> : 'xxxxxxxxxxxxxxxx' (required)<br>
-		<b>playlist</b> : number of videos playlist count (option) Default = 10<br>
-		<b>autoplay</b> : boolean (option) Default = false <br>
-		<b>related</b> : boolean (option) Default = false</p>
+		<br>
+		<!-- Selector by Id -->
+		<div id="unix" data-ycp_title="#Demo - Bachors.com" data-ycp_channel="UCoiS7s7HrE7bHNuzERi-FCQ"></div> <!-- By ChannelId -->
+		<br><br>
+		
+		<!-- Selector by ClassName -->
+		<div class="demo" data-ycp_title="#Javascript - Sekolah Koding" data-ycp_channel="PLCZlgfAG0GXAiH1acKFPx8EtpJAq44gjP"></div> <!-- By PlayListId -->
+		<br><br>
+		<div class="demo" data-ycp_title="#News - Vevo Uk" data-ycp_channel="vevouk"></div> <!-- By UserName -->
+		
+		<h1 align="center">Usage</h1>
 		<pre class="prettyprint">&lt;!-- CSS --&gt;
 &lt;link type="text/css" rel="stylesheet" href="css/ycp.css" /&gt;
 
 &lt;!-- Selector by Id --&gt;
-&lt;div id="unix" data-ycp_title="#Demo - iBacor.com" data-ycp_channel="UCoiS7s7HrE7bHNuzERi-FCQ"&gt;&lt;/div&gt; &lt;!-- By ChannelId --&gt;
+&lt;div id="unix" data-ycp_title="#Demo - Bachors.com" data-ycp_channel="UCoiS7s7HrE7bHNuzERi-FCQ"&gt;&lt;/div&gt; &lt;!-- By ChannelId --&gt;
 
 &lt;!-- Selector by ClassName --&gt;
 &lt;div class="demo" data-ycp_title="#Javascript - Sekolah Koding" data-ycp_channel="PLCZlgfAG0GXAiH1acKFPx8EtpJAq44gjP"&gt;&lt;/div&gt; &lt;!-- By PlayListId --&gt;
@@ -72,7 +87,7 @@ $(function() {
         
     $("#unix").ycp({
         apikey : 'xxxxxxxxxxxxxxxx',
-        playlist : 6,
+        playlist : 7,
         autoplay : true,
         related : true
     });
@@ -83,15 +98,6 @@ $(function() {
             
 });
 &lt;/script&gt;</pre>
-
-		<!-- Selector by Id -->
-		<div id="unix" data-ycp_title="#Demo - iBacor.com" data-ycp_channel="UCoiS7s7HrE7bHNuzERi-FCQ"></div> <!-- By ChannelId -->
-		<br>
-		
-		<!-- Selector by ClassName -->
-		<div class="demo" data-ycp_title="#Javascript - Sekolah Koding" data-ycp_channel="PLCZlgfAG0GXAiH1acKFPx8EtpJAq44gjP"></div> <!-- By PlayListId -->
-		<br>
-		<div class="demo" data-ycp_title="#News - Vevo Uk" data-ycp_channel="vevouk"></div> <!-- By UserName -->
 
 		<!-- include jQuery -->
 		<script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -104,14 +110,14 @@ $(function() {
 		$(function() {
 		
 			$("#unix").ycp({
-				apikey : 'xxxxxx',
-				playlist : 6,
-				autoplay : true,
+				apikey : 'xxx',
+				playlist : 7,
+				autoplay : false,
 				related : true
 			});
 			
 			$(".demo").ycp({
-				apikey : 'xxxxxx'
+				apikey : 'xxx'
 			});
 			
 		});
