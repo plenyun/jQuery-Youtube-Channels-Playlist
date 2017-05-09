@@ -52,7 +52,7 @@ $.fn.ycp = function(opt) {
             d += '<div class="luhur">';
 			d += '<div class="title">' + title + '</div>';
 			d += '<span class="tombol vid-prev" title="Previous videos">Prev</span> ';
-            d += '<span class="tombol vid-next" title="Next videos">Next</span><span class="about" title="ycp.js"><a href="http://ibacor.com/labs/jquery-youtube-channels-playlist" target="_BLANK">♥</a></span></div><div class="handap">';
+            d += '<span class="tombol vid-next" title="Next videos">Next</span><span class="about" title="ycp.js"><a href="https://github.com/bachors/jQuery-Youtube-Channels-Playlist" target="_BLANK">♥</a></span></div><div class="handap">';
             $.each(c.items, function(i, a) {
                 var b = c.items[i].snippet.resourceId.videoId;
                 ycp_part(b, i, k, l);
