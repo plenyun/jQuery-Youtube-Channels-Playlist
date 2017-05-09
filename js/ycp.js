@@ -1,7 +1,7 @@
 /******************************************************
 * #### jQuery-Youtube-Channels-Playlist v06 ####
 * Coded by Ican Bachors 2014.
-* http://ibacor.com/labs/jquery-youtube-channels-playlist/
+* https://github.com/bachors/jQuery-Youtube-Channels-Playlist
 * Updates will be posted to this site.
 ******************************************************/
 
@@ -20,7 +20,7 @@ $.fn.ycp = function(opt) {
 		var b = ($(this).attr('id') != null && $(this).attr('id') != undefined ? '#' + $(this).attr('id') : '.' + $(this).attr('class')),
 			title = ($(this).data('ycp_title') == undefined ? 'YCP.js' : $(this).data('ycp_title')),
 			channel = $(this).data('ycp_channel'),
-			html = '<div class="ycp">' + '<div class="unit kenca">' + '<div class="ycp_vid_play" title="Play video"></div>' + '</div>' + '<div class = "unit katuhu">' + '<div id="ycp_youtube_channels' + i + '"></div>' + '</div>' + '</div>';
+			html = '<div class="ycp">' + '<div class="belah ycp_vid_play" title="Play video">' + '</div>' + '<div class="belah" id="ycp_youtube_channels' + i + '">' + '</div>' + '</div>';
 			$(this).html(html);
 		if(channel.substring(0, 2) == 'PL' || channel.substring(0, 2) == 'UU'){
 			var pageToken = '';
@@ -49,10 +49,10 @@ $.fn.ycp = function(opt) {
             dataType: 'json'
         }).done(function(c) {
             var d = '';
-            d += '<div class="vid-top">';
+            d += '<div class="luhur">';
 			d += '<div class="title">' + title + '</div>';
 			d += '<span class="tombol vid-prev" title="Previous videos">Prev</span> ';
-            d += '<span class="tombol vid-next" title="Next videos">Next</span><span class="about" title="ycp.js"><a href="http://ibacor.com/labs/jquery-youtube-channels-playlist" target="_BLANK">♥</a></span></div><div class="vid-bottom">';
+            d += '<span class="tombol vid-next" title="Next videos">Next</span><span class="about" title="ycp.js"><a href="http://ibacor.com/labs/jquery-youtube-channels-playlist" target="_BLANK">♥</a></span></div><div class="handap">';
             $.each(c.items, function(i, a) {
                 var b = c.items[i].snippet.resourceId.videoId;
                 ycp_part(b, i, k, l);
@@ -65,14 +65,14 @@ $.fn.ycp = function(opt) {
                 var e = $(l + ' .ycp div#ycp_youtube_channels' + k + ' div.play').attr("data-vvv"),
 					imag = $(l + ' .ycp div#ycp_youtube_channels' + k + ' div.play').attr("data-img");
 				if(opt.autoplay == false){
-					$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').html('<a href="#">Play</a>');
-					$(l + ' .ycp div.kenca:eq(' + k + ')').css('background', 'url(' + imag + ') no-repeat');
-					$(l + ' .ycp div.kenca:eq(' + k + ')').css('-webkit-background-size', 'cover');
-					$(l + ' .ycp div.kenca:eq(' + k + ')').css('-moz-background-size', 'cover');
-					$(l + ' .ycp div.kenca:eq(' + k + ')').css('-o-background-size', 'cover');
-					$(l + ' .ycp div.kenca:eq(' + k + ')').css('background-size', 'cover');
+					$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').html('<a href="#"></a>');
+					$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('background', 'url(' + imag + ') no-repeat');
+					$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('-webkit-background-size', 'cover');
+					$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('-moz-background-size', 'cover');
+					$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('-o-background-size', 'cover');
+					$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('background-size', 'cover');
                 }else{
-					$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').html('<iframe src="//www.youtube.com/embed/' + e + '?rel=' + (opt.related ? 1 : 0) + '&amp;autoplay=1" allowfullscreen="" frameborder="0" class="vid-iframe"></iframe>');
+					$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').html('<iframe src="//www.youtube.com/embed/' + e + '?rel=' + (opt.related ? 1 : 0) + '&amp;autoplay=1" allowfullscreen="" frameborder="0" class="bingkay"></iframe>');
                 }
 				$(l + ' .ycp div#ycp_youtube_channels' + k + ' div').removeClass('vid-active');
                 $(l + ' .ycp div#ycp_youtube_channels' + k + ' div.play:eq(0)').addClass('vid-active')
@@ -95,21 +95,21 @@ $.fn.ycp = function(opt) {
                     $(l + ' .ycp div#ycp_youtube_channels' + k + ' div').removeClass('vid-active');
                     $(this).addClass('vid-active');
 					if(opt.autoplay == false){
-						$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').html('<a href="#">Play</a>');
-						$(l + ' .ycp div.kenca:eq(' + k + ')').css('background', 'url(' + m + ') no-repeat');
-						$(l + ' .ycp div.kenca:eq(' + k + ')').css('-webkit-background-size', 'cover');
-						$(l + ' .ycp div.kenca:eq(' + k + ')').css('-moz-background-size', 'cover');
-						$(l + ' .ycp div.kenca:eq(' + k + ')').css('-o-background-size', 'cover');
-						$(l + ' .ycp div.kenca:eq(' + k + ')').css('background-size', 'cover');
+						$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').html('<a href="#"></a>');
+						$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('background', 'url(' + m + ') no-repeat');
+						$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('-webkit-background-size', 'cover');
+						$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('-moz-background-size', 'cover');
+						$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('-o-background-size', 'cover');
+						$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').css('background-size', 'cover');
 					}else{
-						$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').html('<iframe src="//www.youtube.com/embed/' + a + '?rel=' + (opt.related ? 1 : 0) + '&amp;autoplay=1" allowfullscreen="" frameborder="0" class="vid-iframe"></iframe>');
+						$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').html('<iframe src="//www.youtube.com/embed/' + a + '?rel=' + (opt.related ? 1 : 0) + '&amp;autoplay=1" allowfullscreen="" frameborder="0" class="bingkay"></iframe>');
 					}
 					return false
                 })
             });
 			$(l + ' .ycp div.ycp_vid_play:eq(' + k + ')').click(function() {
                 var a = $(l + ' .ycp div#ycp_youtube_channels' + k + ' div.play.vid-active').attr("data-vvv");
-				$(this).html('<iframe src="//www.youtube.com/embed/' + a + '?rel=' + (opt.related ? 1 : 0) + '&amp;autoplay=1" allowfullscreen="" frameborder="0" class="vid-iframe"></iframe>');
+				$(this).html('<iframe src="//www.youtube.com/embed/' + a + '?rel=' + (opt.related ? 1 : 0) + '&amp;autoplay=1" allowfullscreen="" frameborder="0" class="bingkay"></iframe>');
 				return false
 			});
         })
