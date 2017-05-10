@@ -14,7 +14,7 @@ https://developers.google.com/youtube/v3/getting-started</p><br>
 <p>Register and get your Youtube API key <a href="https://code.google.com/apis/console" target="_blank">here</a></p>
 <h3>HTML:</h3>
 <p>Required:</p>
-<pre>data-ycp_ycp_channel = 'vevouk'</pre>
+<pre>data-ycp_channel = 'vevouk'</pre>
 <p>Options:</p>
 <pre>data-ycp_title = 'Title your playlist'</pre>
 <h3>Javascript:</h3>
